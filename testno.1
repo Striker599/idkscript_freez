@@ -44,75 +44,159 @@ Rayfield:Notify({
    Image = nil,
 })
 
-local Button = MainTab:CreateButton({
+local Toggle = MainTab:CreateToggle({
    Name = "Freez Screen",
-   Callback = function()
-   -- The function that takes place when the button is pressed
+   CurrentValue = false,
+   Flag = "Toggwrqle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "force accept",
-   Callback = function()
-   -- The function that takes place when the button is pressed
+local Toggle = MainTab:CreateToggle({
+   Name = "Freez Screen",
+   CurrentValue = false,
+   Flag = "Toggwwrle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "force not to jump",
-   Callback = function()
-   -- The function that takes place when the button is pressed
+local Toggle = MainTab:CreateToggle({
+   Name = "force not jump",
+   CurrentValue = false,
+   Flag = "Togglerw1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
 
 local MainSection = MainTab:CreateSection("Farm")
 
-local Button = MainTab:CreateButton({
-   Name = "Auto Farm level",
-   Callback = function()
-   -- The function that takes place when the button is pressed
+local Toggle = MainTab:CreateToggle({
+   Name = "auto farm level",
+   CurrentValue = false,
+   Flag = "Tog12314gle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "Auto Farm Nearest",
-   Callback = function()
-   -- The function that takes place when the button is pressed
+local Toggle = MainTab:CreateToggle({
+   Name = "auto farm nearest",
+   CurrentValue = false,
+   Flag = "Togr2gle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
 
 local MainSection = MainTab:CreateSection("Bosses")
 
 
-local Button = MainTab:CreateButton({
-   Name = "Auto nearest boss",
-   Callback = function()
-   -- The function that takes place when the button is pressed
+local Toggle = MainTab:CreateToggle({
+   Name = "auto farm nearest boss",
+   CurrentValue = false,
+   Flag = "Togrgr2gle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
 
-local Button = MainTab:CreateButton({
-   Name = "Auto Farm All Bosses",
-   Callback = function()
-   -- The function that takes place when the button is pressed
+local Toggle = MainTab:CreateToggle({
+   Name = "auto farm all boss",
+   CurrentValue = false,
+   Flag = "Togr2gle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
    end,
 })
 
-local MainTab = Window:CreateTab("sea", nil) -- Title, Image
+local MainSection = MainTab:CreateSection("chest")
 
-local MainTab = Window:CreateTab("fruit", nil) -- Title, Image
+local Toggle = MainTab:CreateToggle({
+   Name = "auto chest (tween)",
+   CurrentValue = false,
+   Flag = "Togr2gle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
 
-local MainTab = Window:CreateTab("status", nil) -- Title, Image
+local seaTab = Window:CreateTab("sea", nil) -- Title, Image
 
-local MainTab = Window:CreateTab("trials", nil) -- Title, Image
+local Slider = seaTab:CreateSlider({
+   Name = "boat speed",
+   Range = {0, 200},
+   Increment = 5,
+   Suffix = "speed",
+   CurrentValue = 10,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the slider changes
+   -- The variable (Value) is a number which correlates to the value the slider is currently at
+   end,
+})
 
-local MainTab = Window:CreateTab("draco v4", nil) -- Title, Image
+local Dropdown = seaTab:CreateDropdown({
+   Name = "auto",
+   Options = {"sea beast","pirana","sharks","boats","haunted boats","terror shark","nil"},
+   CurrentOption = {"nil"},
+   MultipleOptions = false,
+   Flag = "Dropdeqown1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Options)
+   -- The function that takes place when the selected option is changed
+   -- The variable (Options) is a table of strings for the current selected options
+   end,
+})
 
-local MainTab = Window:CreateTab("bounty/honer", nil) -- Title, Image
+local Toggle = seaTab:CreateToggle({
+   Name = "auto livi",
+   CurrentValue = false,
+   Flag = "Togrqwdgdvs2gle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
 
-local MainTab = Window:CreateTab("travle", nil) -- Title, Image
+local Toggle = seaTab:CreateToggle({
+   Name = "auto prehistoric",
+   CurrentValue = false,
+   Flag = "Togarrw2gle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   -- The function that takes place when the toggle is pressed
+   -- The variable (Value) is a boolean on whether the toggle is true or false
+   end,
+})
 
-local MainTab = Window:CreateTab("berries", nil) -- Title, Image
+local fruitTab = Window:CreateTab("fruit", nil) -- Title, Image
+
+
+local statsTab = Window:CreateTab("status", nil) -- Title, Image
+
+
+local trialsTab = Window:CreateTab("trials", nil) -- Title, Image
+
+
+local dracoTab = Window:CreateTab("draco v4", nil) -- Title, Image
+
+
+local bountyTab = Window:CreateTab("bounty/honer", nil) -- Title, Image
+
+
+local travleTab = Window:CreateTab("travle", nil) -- Title, Image
+
+
+local berriesTab = Window:CreateTab("berries", nil) -- Title, Image
 
 local MainTab = Window:CreateTab("islands", nil) -- Title, Image
 
